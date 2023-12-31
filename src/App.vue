@@ -1,5 +1,8 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import { fetchPosts } from './services'
+
+fetchPosts()
 </script>
 
 <template>
