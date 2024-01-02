@@ -85,8 +85,10 @@ onMounted(async () => {
 
 <ul>
   <li v-for="post in posts" style="list-style: none;">
-    <p>Titulo: {{ post.title }}</p>
-    <p>{{ post.content }}</p>
+    <p class="text">Titulo: {{ post.title }}</p>
+    <div class="blog-content">
+      <p>{{ post.content }}</p>
+    </div>
     <button @click="handleDelete(post.id)">x</button>
   </li>
 </ul>
@@ -105,4 +107,29 @@ onMounted(async () => {
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
+
+.text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.blog-content {
+  text-align: justify; /* Center-align the text */
+  white-space: pre-wrap;
+}
+
+.blog-content p {
+  font-size: 16px; /* Set the font size */
+  line-height: 1.6; /* Set the line height */
+  margin: 10px 0; /* Add some margin between paragraphs */
+}
+
+.blog-content br {
+  margin-bottom: 20px;
+}
+
 </style>
